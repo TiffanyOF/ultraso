@@ -1,9 +1,12 @@
 #include <HCSR04.h>
 
+
 #define p_trigger 4
 #define p_echo 5
 int Ledred = 9 ;
 int Ledyellow = 8 ;
+int Ledgreen =7 ;
+int Ledbranco =6 ;
 
 UltraSonicDistanceSensor distanceSensor(p_trigger, p_echo);
 
@@ -13,6 +16,8 @@ void setup () {
   Serial.begin(9600);
   pinMode(9,OUTPUT);
   pinMode (8, OUTPUT);
+  pinMode (7,OUTPUT);
+  pinMode (6, OUTPUT);
 }
 
 void loop() {
@@ -24,21 +29,35 @@ void loop() {
   Serial.print(dist_m);
   Serial.println("m");
   Serial.println("----------------------------------");
-  delay(1000);
-}
-void changeLights() {
-  if (dist_m > 0) {
-    "digitalWrite(9, HIGH)";
-  
+  delay(100);
+
+  if (dist_cm < 10 ){
+  digitalWrite (6, HIGH);
 } else {
-    "digitalWrite(9, LOW)";
+  digitalWrite (6, LOW);
 }
 
-if (dist_m > 1 ){
- "digitalWrite (8, HIGH)";
+if ((if (dist_cm >20)(if (dist_cm <30)){
+  digitalWrite (7, HIGH);
 } else {
-  "digitalWrite (8, LOW)";
+  digitalWrite (7, LOW);
 }
-  }
+
+  if (dist_cm > 30) {
+   digitalWrite(9, HIGH);
+  
+} else {
+    digitalWrite(9, LOW);
+}
+if (dist_cm  >30 ){
+  digitalWrite (8, HIGH);
+} else {
+  digitalWrite (8, LOW);
+}
+
+}
+
+
+
  
  
