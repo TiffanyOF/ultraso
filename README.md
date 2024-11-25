@@ -37,27 +37,29 @@ void loop() {
   digitalWrite (6, LOW);
 }
 
-if ((if (dist_cm >20)(if (dist_cm <30)){
+  if (dist_cm >= 11 && dist_cm <= 20 ){
   digitalWrite (7, HIGH);
 } else {
   digitalWrite (7, LOW);
 }
 
-  if (dist_cm > 30) {
-   digitalWrite(9, HIGH);
-  
-} else {
-    digitalWrite(9, LOW);
-}
-if (dist_cm  >30 ){
+if (dist_cm >= 21 && dist_cm <= 30 ){
   digitalWrite (8, HIGH);
 } else {
   digitalWrite (8, LOW);
 }
 
+ 
+if (dist_cm  >30 ){
+  digitalWrite (9, HIGH);
+} else {
+  digitalWrite (9, LOW);
+}
+
 }
 
 
 
+ 
  
  
